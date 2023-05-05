@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#input::placeholder {
+  color: #43425D;
+  opacity: 1;
+}
+
+
+#active{
+  background-color: #086288;
+}
+.Mui-active{
+  scale: 2.3;
+  color: #086288 !important;
+  /* background: #FAA81D; */
+  /* font-weight:bold ; */
+  
+}
+.MuiStepLabel-label.Mui-active::after{
+  content: "";
+  height: 2px;
+  width: 29%;
+  background: #FAA81D;
+  top:19px;
+  left:0px;
+  position: absolute;
+  /* z-index: 100; */
+  
+}
+#editIcon{
+  transition:  all 0.3s ease-in-out;
+}
+
+#editIcon:hover{
+  color: rgb(247, 85, 26);
+}
+.font{
+  font-family: 'Abril Fatface'
+}
+/* .Mui-selected {
+  backgroundColor: "#000000A2",
+} */
+
+.MuiButton-root{
+  color:'#ffff';
+  background-color: #FAA81D;
+  
+}

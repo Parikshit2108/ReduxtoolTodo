@@ -1,25 +1,51 @@
-// import logo from './logo.svg';
+import { ThemeProvider } from "@mui/material";
+// import Login from "./admin/Login";
+import theme from "./reusablecompo/Theme";
 import "./App.css";
-// import Deletemodal from "./components/Deletemodal";
-// import Todo from "./components/Todo";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useEffect } from "react";
-// import { fetchApi } from "./actions/action";
-import Newtodo from "./components/Newtodo";
-
+import Sidebar from "../src/reusablecompo/Sidebar";
+import Mainstepper from "./employee/Mainstepper";
+import { Route, Routes } from "react-router-dom";
+import EmpSidebar from "./employee/EmpSidebar";
+import ReturnNavbar from "./employee/ReturnNavbar";
+import Login from "./admin/Login";
+import InfoCard from "./employee/InfoCard";
+import Charts from "./employee/Charts";
+import Select from "./muy/Select";
+import Test from "./muy/Test";
+import Todo from "./components/Todo";
+import Usereducer from "./reducers/Usereducer";
+import Fetch from "./Hooks/Fetch";
+import { useFetch } from "./Hooks/useFetch";
+import Table from "./Hooks/Table";
 function App() {
+  const data = useFetch("https://swapi.dev/api/planets");
+  console.log(data);
   return (
     <div className="App">
-      <Newtodo />
-      
-      {/* <Deletemodal /> */}
-
-      {/* <Todo />
-     <div>
-      {users.map((val)=>{
-        return <h2 key={val.id}>{val.name}</h2>
-      })}
-     </div> */}
+      <ThemeProvider theme={theme}>
+        {/* <Todo /> */}
+        {/* <Table/> */}
+        {/* <Fetch /> */}
+        {/* <Usereducer/> */}
+        {/* <InfoCard /> */}
+        {/* <Login /> */}
+        {/* <Sidebar /> */}
+        {/* <Charts /> */}
+        {/* <Select /> */}
+        {/* <Test /> */}
+        <Routes>
+          <Route path="/" element={<Sidebar />} />
+          <Route path="/Mainstepper" element={<Mainstepper />} />
+          <Route path="/Sidebar" element={<Sidebar />} />
+          <Route path="/Empsidebar" element={<EmpSidebar />} />
+          <Route path="/ReturnNavbar" element={<ReturnNavbar />} />
+          <Route path="/Infocard" element={<InfoCard />} />
+          <Route path="/Charts" element={<Charts />} />
+        </Routes>
+        {/* <Home /> */}
+        {/* <Axiosinstances /> */},/ +{/* <Sidebar /> */}
+        {/* <Navbar /> */}
+      </ThemeProvider>
     </div>
   );
 }
